@@ -1,15 +1,10 @@
-import React from "react";
-import ContextFirst, {initValue} from "./context";
-import reducerFirst from "./reducerFirst";
+import React from 'react';
+import ContextFirst, { initValue } from './context';
+import reducerFirst from './reducerFirst';
 
-const ProviderFirst = ({children}) => {
+const ProviderFirst = ({ children }) => {
+    const [state, dispatch] = React.useReducer(reducerFirst, initValue);
 
-    const [state, dispatch] = React.useReducer(reducerFirst, initValue)
-
-    return (
-        <ContextFirst.Provider value={{state, dispatch}}>
-            {children}
-        </ContextFirst.Provider>
-    )
-}
+    return <ContextFirst.Provider value={{ state, dispatch }}>{children}</ContextFirst.Provider>;
+};
 export default ProviderFirst;

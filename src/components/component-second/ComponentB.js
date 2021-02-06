@@ -1,11 +1,10 @@
 import React from 'react';
-import ContextFirst from '../../containers/container-first/store/context';
 import { setAppTouched } from '../../common/actions';
+import { useDispatch, useTrackedState } from '../../containers/container-second/store/Provider';
 
 const ComponentB = () => {
-    const { state, dispatch } = React.useContext(ContextFirst);
-
-    const { isTouched } = state;
+    const { isTouched } = useTrackedState();
+    const dispatch = useDispatch();
 
     const handleClick = () => {
         dispatch(setAppTouched(!isTouched));

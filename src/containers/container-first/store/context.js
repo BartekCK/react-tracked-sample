@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
 export const initValue = {
     isLoading: false,
-    isTouched: false
-}
+    isTouched: false,
+};
 
 const ContextFirst = React.createContext(initValue);
 

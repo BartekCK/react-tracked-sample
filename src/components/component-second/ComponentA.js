@@ -1,11 +1,10 @@
 import React from 'react';
-import ContextFirst from '../../containers/container-first/store/context';
+import { useDispatch, useTrackedState } from '../../containers/container-second/store/Provider';
 import { setAppLoading } from '../../common/actions';
 
 const ComponentA = () => {
-    const { state, dispatch } = React.useContext(ContextFirst);
-
-    const { isLoading } = state;
+    const { isLoading } = useTrackedState();
+    const dispatch = useDispatch();
 
     const handleClick = () => {
         dispatch(setAppLoading(!isLoading));

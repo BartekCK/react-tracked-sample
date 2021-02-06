@@ -1,6 +1,6 @@
 import { SET_LOADING, SET_TOUCHED } from '../../../common/types';
 
-const reducerFirst = (state, action) => {
+const reducerSecond = (state, action) => {
     const { isLoading, isTouched } = action.payload;
     switch (action.type) {
         case SET_LOADING:
@@ -12,4 +12,4 @@ const reducerFirst = (state, action) => {
     }
 };
 
-export default reducerFirst;
+export default reducerSecond;
