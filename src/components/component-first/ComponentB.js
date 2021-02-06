@@ -21,4 +21,4 @@ const ComponentB = () => {
     );
 };
 
-export default ComponentB;
+export default React.memo(ComponentB);
